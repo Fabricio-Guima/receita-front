@@ -1,0 +1,38 @@
+mutation(
+  $id: ID!
+  $name: String!
+  $duration: Int!
+  $servings: Int!
+  $image: String!
+  $description: String!
+  $ingredients: JSON!
+  $steps: JSON!
+  $category: ID!
+  $autor: ID!
+) {
+  updateReceita(
+    input: {
+      where: { id: $id }
+      data: {
+        name: $name
+        duration: $duration
+        servings: $servings
+        image: $image
+        description: $description
+        ingredients: $ingredients
+        steps: $steps
+        category: $category
+        autor: $autor
+      }
+    }
+  ) {
+    receita {
+      id
+      name
+      category {
+        id
+        name
+      }
+    }
+  }
+}

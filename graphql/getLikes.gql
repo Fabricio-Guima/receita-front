@@ -1,0 +1,6 @@
+query($id: ID!) {
+  receita(id: $id) {
+    id
+    likes
+  }
+}

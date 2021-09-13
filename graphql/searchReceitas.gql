@@ -1,0 +1,11 @@
+query($terms: String!) {
+  receitas(where: { name_contains: $terms }) {
+    id
+    name
+    category {
+      id
+      name
+      slug
+    }
+  }
+}

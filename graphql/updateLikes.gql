@@ -1,0 +1,19 @@
+mutation($id: ID!, $likes: Long!, $idUser: ID!, $favorites: [ID!]) {
+  updateReceita(input: { where: { id: $id }, data: { likes: $likes } }) {
+    receita {
+      id
+      likes
+    }
+  }
+  updateUser(
+    input: { where: { id: $idUser }, data: { favorites: $favorites } }
+  ) {
+    user {
+      id
+      favorites {
+        id
+        name
+      }
+    }
+  }
+}
